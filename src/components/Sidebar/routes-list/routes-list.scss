@@ -1,0 +1,38 @@
+.routes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__item {
+    height: 60px;
+    border-radius: var(--oval-border);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    list-style: none;
+
+    &_active {
+      background-color: var(--active-background-color);
+    }
+
+    &:hover {
+      background-color: var(--hover-background-color);
+    }
+
+    &:active {
+      background-color: var(--active-background-color);
+    }
+  }
+
+  &__title {
+    overflow: hidden;
+    transition: all 0.6s;
+    opacity: var(--opacity-sidebar-close);
+    &_open {
+      opacity: var(--opacity-sidebar-open);
+    }
+  }
+}

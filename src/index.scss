@@ -1,11 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
+  --app-background-color: rgb(30 41 59);
+  --sidebar-background-color: rgb(0 0 0);
+  --active-background-color: rgb(0 12 69);
+  --hover-background-color: rgb(15 23 42);
+  --width-sidebar-open: 250px;
+  --padding-sidebar-open: 30px;
+  --oval-border: 20px;
+  --circular-border: 45px;
+  --opacity-sidebar-open: 1;
+  --opacity-sidebar-close: 0.1;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--app-background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

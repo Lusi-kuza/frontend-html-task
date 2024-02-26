@@ -1,0 +1,80 @@
+@mixin point($property) {
+  width: 15px;
+  height: 15px;
+  background-color: $property;
+  border-radius: var(--circular-border);
+}
+
+.sidebar {
+  width: 60px;
+  height: 80vh;
+  min-height: 670px;
+  margin: auto;
+  padding: var(--padding-sidebar-open) 25px;
+  background-color: var(--sidebar-background-color);
+  border-radius: var(--oval-border);
+  outline: 3px solid var(--app-background-color);
+  outline-offset: -5px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.8s;
+  &_open {
+    width: var(--width-sidebar-open);
+    padding: var(--padding-sidebar-open);
+  }
+}
+
+.points {
+  display: flex;
+  gap: 7.5px;
+  &__point {
+    &_red {
+      @include point(rgb(235 106 94));
+    }
+    &_yellow {
+      @include point(rgb(245 191 79));
+    }
+    &_green {
+      @include point(rgb(97 197 84));
+    }
+  }
+}
+
+.title-section {
+  margin: 30px 0 40px 0;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  position: relative;
+
+  &__logo-company {
+    height: 60px;
+  }
+
+  &__title {
+    overflow: hidden;
+    transition: all 0.6s;
+    opacity: var(--opacity-sidebar-close);
+    &_open {
+      opacity: var(--opacity-sidebar-open);
+    }
+  }
+
+  &__button {
+    position: absolute;
+    left: 100px;
+    height: 50px;
+    width: 50px;
+    border-radius: var(--circular-border);
+    border: 3px solid var(--sidebar-background-color);
+    background-color: var(--sidebar-background-color);
+    cursor: pointer;
+    transition: all 0.8s;
+    &_open {
+      left: var(--width-sidebar-open);
+      background-color: var(--app-background-color);
+      border-color: var(--app-background-color);
+      transform: rotate(-180deg);
+    }
+  }
+}
